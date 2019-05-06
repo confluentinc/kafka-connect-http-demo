@@ -1,0 +1,17 @@
+
+server:
+  # Define a custom port instead of the default 8080
+  port: 8443
+  ssl:
+    # The format used for the keystore
+    key-store-type: JKS
+    # The path to the keystore containing the certificate
+    key-store: classpath:localhost-keystore.jks
+    # The password used to generate the certificate
+    key-store-password: changeit
+    # The alias mapped to the certificate
+    key-alias: localhost
+
+# Tell Spring Security (if used) to require requests over HTTPS
+security:
+  require-ssl: true

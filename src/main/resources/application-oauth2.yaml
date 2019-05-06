@@ -1,0 +1,10 @@
+security:
+  basic:
+    enable: false
+  oauth2:
+    resource:
+      filter-order: 3
+
+logging:
+  level:
+    org.springframework.security: DEBUG
