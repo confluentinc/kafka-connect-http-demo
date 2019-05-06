@@ -1,11 +1,15 @@
-# Auth Demo App
+# Kafka Connect HTTP Sink Demo App
 
-This app can be used for testing against various types of auth.
+A Spring Boot app that can run with various types of auth configured by setting the appropriate Spring Profile.
 
-- Simple Auth (No Authentication)
-- Basic Auth
-- OAuth2
-- SSL
+This app is useful in testing the HTTP Sink Connector.
+
+## Supported Security Types
+
+- Simple Auth (No Authentication) (Profile: `no-auth`)
+- Basic Auth (Profile: `basic-auth`)
+- OAuth2 (Profile: `oauth2`)
+- SSL (Profile: `ssl-auth`)
 
 ## Simple (No) Auth
 
@@ -93,33 +97,3 @@ Notes:
      keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 
     -keystore keystore.jks -validity 3650
     ```
-
-## Docker
-
-This project is packaged up into a Docker image available for use. Run it with the different profiles mentioned above to test out the various security types.
-
-### Build New Image
-
-```
-mvn clean install dockerfile:build
-
-# to push new image
-docker login
-mvn clean install dockerfile:build dockerfile:push
-```
-
-### Run Container
-
-```
-# simple auth
-docker run -e "SPRING_PROFILES_ACTIVE=simple-auth" -p 8080:8080 msschroe3/http-sink-demo:latest
-
-# basic auth
-docker run -e "SPRING_PROFILES_ACTIVE=basic-auth" -p 8080:8080 msschroe3/http-sink-demo:latest
-
-# oauth2
-docker run -e "SPRING_PROFILES_ACTIVE=oauth2" -p 8080:8080 msschroe3/http-sink-demo:latest
-
-# ssl auth
-docker run -e "SPRING_PROFILES_ACTIVE=ssl-auth" -p 8443:8443 msschroe3/http-sink-demo:latest
-```
