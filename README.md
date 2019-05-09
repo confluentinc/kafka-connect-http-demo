@@ -1,12 +1,14 @@
 # Kafka Connect HTTP Sink Demo App
 
+*NOTICE: This app is for demo purposes only and is not suitable for production use.*
+
 A Spring Boot app that can run with various types of auth configured by setting the appropriate Spring Profile.
 
 This app is useful in testing the HTTP Sink Connector.
 
 ## Supported Security Types
 
-- Simple Auth (No Authentication) (Profile: `no-auth`)
+- Simple Auth (No Authentication) (Profile: `simple-auth`)
 - Basic Auth (Profile: `basic-auth`)
 - OAuth2 (Profile: `oauth2`)
 - SSL (Profile: `ssl-auth`)
