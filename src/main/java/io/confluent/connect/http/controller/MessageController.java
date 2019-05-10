@@ -51,6 +51,20 @@ public class MessageController {
         .body(save(message));
   }
 
+
+  @PostMapping(path = "/api/messages/{topic}/{key}")
+  public ResponseEntity createMessage(@PathVariable String topic,
+                                      @PathVariable String key,
+                                      @RequestBody String message) {
+    log.info("MESSAGE RECEIVED: {}, KEY: {}, TOPIC: {}", message, key, topic);
+
+    Message newMessage = messageRepository.save(new Message(message, key, topic));
+
+    return ResponseEntity
+        .status(HttpStatus.CREATED)
+        .body(newMessage);
+  }
+
   @DeleteMapping(path = "/api/messages/{id}")
   public ResponseEntity deleteMessage(@PathVariable String id) {
     log.warn("DELETING MESSAGE WITH ID: {}", id);

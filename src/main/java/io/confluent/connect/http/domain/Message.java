@@ -33,9 +33,16 @@ public class Message {
   public Message(String message) {
     this.message = message;
   }
+  public Message(String message, String key, String topic) {
+    this.message = message;
+    this.key = key;
+    this.topic = topic;
+  }
 
   @Id
   @GeneratedValue
   private Long id;
   private String message;
+  private String key;
+  private String topic;
 }
