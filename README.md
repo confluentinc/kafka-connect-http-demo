@@ -99,3 +99,15 @@ Notes:
      keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 
     -keystore keystore.jks -validity 3650
     ```
+    
+# Tombstone API
+
+The demo app has an API that can send tombstone records (non-null key, null value) to a topic.
+
+The `topic` and `key` query params are optional. By default it will send a tombstone with the key of `1` to `test-topic`.
+
+```
+curl -X POST 'localhost:8080/api/tombstone?topic=testing-topic&key=test'
+```
+
+*If auth is enabled on the app, be sure to include it on the tombstone requests.* 
