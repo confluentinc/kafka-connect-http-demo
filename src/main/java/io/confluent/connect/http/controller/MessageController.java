@@ -51,6 +51,22 @@ public class MessageController {
         .body(save(message));
   }
 
+  @DeleteMapping(path = "/api/messages/{id}")
+  public ResponseEntity deleteMessage(@PathVariable String id) {
+    log.warn("DELETING MESSAGE WITH ID: {}", id);
+
+    try {
+      Long lId = Long.valueOf(id);
+      messageRepository.deleteById(lId);
+    } catch (Exception e) {
+      log.error("Unable to convert {} into a Long", id);
+    }
+
+    return ResponseEntity
+        .status(HttpStatus.OK)
+        .build();
+  }
+
   @PostMapping(path = "/api/messages/batch")
   public ResponseEntity createMessages(@RequestBody List<String> messages) {
     log.info("MESSAGES RECEIVED: {}", messages);
