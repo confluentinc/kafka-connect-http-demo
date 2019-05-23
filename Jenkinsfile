@@ -2,4 +2,5 @@
 common {
   slackChannel = '#connect-eng'
   upstreamProjects = 'confluentinc/common'
+  nodeLabel = 'docker-oraclejdk8'
 }
