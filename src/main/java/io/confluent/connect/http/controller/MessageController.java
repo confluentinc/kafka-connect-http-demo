@@ -38,21 +38,21 @@ public class MessageController {
   }
 
   @PutMapping(path = "/api/messages")
-  public ResponseEntity putMessage(@RequestBody String message) {
+  public ResponseEntity<Message> putMessage(@RequestBody String message) {
     return ResponseEntity
         .status(HttpStatus.CREATED)
         .body(save(message));
   }
 
   @PostMapping(path = "/api/messages")
-  public ResponseEntity createMessage(@RequestBody String message) {
+  public ResponseEntity<Message> createMessage(@RequestBody String message) {
     return ResponseEntity
         .status(HttpStatus.CREATED)
         .body(save(message));
   }
 
   @DeleteMapping(path = "/api/messages/{id}")
-  public ResponseEntity deleteMessage(@PathVariable String id) {
+  public ResponseEntity<Message> deleteMessage(@PathVariable String id) {
     log.warn("DELETING MESSAGE WITH ID: {}", id);
 
     try {
@@ -68,7 +68,7 @@ public class MessageController {
   }
 
   @PostMapping(path = "/api/messages/batch")
-  public ResponseEntity createMessages(@RequestBody List<String> messages) {
+  public ResponseEntity<Iterable<Message>> createMessages(@RequestBody List<String> messages) {
     log.info("MESSAGES RECEIVED: {}", messages);
 
     // convert to Message
