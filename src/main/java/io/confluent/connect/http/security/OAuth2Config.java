@@ -16,7 +16,6 @@
 
 package io.confluent.connect.http.security;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -84,7 +83,6 @@ public class OAuth2Config {
   @Configuration
   @Order(150)
   @EnableAuthorizationServer
-  @Slf4j
   protected static class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
     @Value("${ACCESS_TOKEN_VALIDITY:" + Integer.MAX_VALUE + "}")
     private int accessTokenValidity;

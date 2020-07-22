@@ -19,7 +19,6 @@ package io.confluent.connect.http.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.parameters.P;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
