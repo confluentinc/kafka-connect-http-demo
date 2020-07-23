@@ -46,7 +46,7 @@ This app is useful in testing the HTTP Sink Connector.
     # create a message
     curl -X POST \
       http://localhost:8080/api/messages \
-      -H 'Authorization: Basic YWRtaW46cGFzc3dvcmQ='
+      -H 'Authorization: Basic YWRtaW46cGFzc3dvcmQ=' \
       -d message-goes-here
     
     # get all messages
