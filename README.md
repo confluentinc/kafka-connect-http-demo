@@ -30,7 +30,7 @@ This app is useful in testing the HTTP Sink Connector.
       -d message-goes-here
       
     # get all messages
-    curl -X POST http://localhost:8080/api/messages
+    curl http://localhost:8080/api/messages
     ```
 
 ## Basic Auth
@@ -50,7 +50,7 @@ This app is useful in testing the HTTP Sink Connector.
       -d message-goes-here
     
     # get all messages
-    curl -X POST \
+    curl \
       http://localhost:8080/api/messages \
       -H 'Authorization: Basic YWRtaW46cGFzc3dvcmQ='
     ```
@@ -79,7 +79,8 @@ This app is useful in testing the HTTP Sink Connector.
       -H 'Authorization: Bearer {token}'
       -d message-goes-here
       
-    curl -X GET \
+    # get all messages
+    curl \
         http://localhost:8080/api/messages \
         -H 'Authorization: Bearer {token}'
     ```
