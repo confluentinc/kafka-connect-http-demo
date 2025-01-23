@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.4.RELEASE</version>
+		<version>2.7.18</version>
 		<relativePath/>
 	</parent>
 
@@ -38,8 +38,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<findbugs-maven-plugin.version>3.0.1</findbugs-maven-plugin.version>
-		<jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
+		<findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -50,12 +50,12 @@
 		<dependency>
 			<groupId>org.springframework.security.oauth</groupId>
 			<artifactId>spring-security-oauth2</artifactId>
-			<version>2.1.4.RELEASE</version>
+			<version>2.5.2.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-jwt</artifactId>
-			<version>1.0.10.RELEASE</version>
+			<version>1.1.1.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -69,7 +69,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.6</version>
+			<version>1.18.36</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -104,7 +104,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.4</version>
+				<version>2.9</version>
 				<configuration>
 					<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
 					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
